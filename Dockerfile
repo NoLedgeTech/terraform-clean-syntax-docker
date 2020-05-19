@@ -8,6 +8,7 @@ RUN apt update && apt install -y \
   && curl -LsO https://github.com/hashicorp/hcl/archive/hcl2.zip \
   && unzip -qq hcl2.zip \
   && mv hcl-hcl2 v2 \
-  && go get github.com/apparentlymart/terraform-clean-syntax
+  && go get github.com/apparentlymart/terraform-clean-syntax \
+  && makedir -p /code
 
 CMD [ "terraform-clean-syntax", "/code" ]
